@@ -1,10 +1,11 @@
 nav {
   display: flex;
   justify-content: space-between;
-  
+  position: fixed;
+  top: 0;
   color: #FFFFFF;
   background-color: #4056A1;
-  min-height: 120px;
+  height: 120px;
   width: 100vw 
 }
 span {
@@ -19,7 +20,7 @@ span {
 
 div {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   padding-right: 1.5em;
@@ -31,7 +32,6 @@ p {
 }
 
 i {
-  justify-self: center;
   align-self: center;
   color: crimson;
 }
