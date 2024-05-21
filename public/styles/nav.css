@@ -1,0 +1,37 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  
+  color: #FFFFFF;
+  background-color: #4056A1;
+  min-height: 120px;
+  width: 100vw 
+}
+span {
+  padding-left: 1.5em;
+  padding-bottom: 0.5em;
+  align-self: flex-end;
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 180%;
+}
+
+div {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  padding-right: 1.5em;
+}
+
+p {
+  margin-bottom: 0px;
+  padding-bottom: 0.2em;
+}
+
+i {
+  justify-self: center;
+  align-self: center;
+  color: crimson;
+}
