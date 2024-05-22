@@ -28,14 +28,12 @@ form textarea {
   border-color: #545149; 
 }
 
-button {
-  display:flex;
+.tweet-button {
   background-color: #4056A1;
   border: none;
   color: white;
   padding: 10px 10px;
   text-align: center;
-
   display: inline-block;
   font-size: 0.8em;
   width: 5em;
