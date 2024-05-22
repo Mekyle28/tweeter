@@ -1,0 +1,45 @@
+section {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+}
+
+section div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5px;
+}
+
+label {
+  display: block;
+
+}
+form {
+  width: inherit;
+  background-color: #f4f1ec;
+}
+form textarea {
+  width: 100%;
+  background-color: #f4f1ec;
+  outline: 0; 
+  border-width: 0 0 4px; 
+  border-color: #545149; 
+}
+
+button {
+  display:flex;
+  background-color: #4056A1;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+
+  display: inline-block;
+  font-size: 0.8em;
+  width: 5em;
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
