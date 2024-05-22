@@ -11,14 +11,14 @@ header {
   align-items: center;
  }
 
-img {
-  size-adjust:  prop;
+header div img {
   max-height: 110%;
 }
 
-h2 {
+header h2 {
   margin: 0;
 }
 
 
 
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
