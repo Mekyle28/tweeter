@@ -1,5 +1,5 @@
 
-header {
+header.top {
   margin-top: 120px;
   height: 400px;
   width: 100%;
@@ -10,12 +10,17 @@ header {
   justify-content: center;
   align-items: center;
  }
+ header.top div {
+  justify-content: center;
+ }
 
-header div img {
+header.top div img {
+  display:flex;
   max-height: 110%;
+  justify-content: center;
 }
 
-header h2 {
+header.top h2 {
   margin: 0;
 }
 
