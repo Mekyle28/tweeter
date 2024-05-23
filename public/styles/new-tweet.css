@@ -41,3 +41,6 @@ form textarea {
   font-weight: 400;
   font-style: normal;
 }
+.out-of-characters {
+  color: red;
+}
