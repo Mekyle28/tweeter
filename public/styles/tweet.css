@@ -1,6 +1,11 @@
 * {
   box-sizing:border-box;
 }
+
+section.tweet-text {
+  margin: 0;
+  padding-bottom: 1em;
+}
 article {
   margin: 1em;
    
@@ -64,21 +69,27 @@ footer p {
 
 
 .fa-solid.fa-flag {
+  padding: .3em;
   color: #4056A1;
 }
 .fa-solid.fa-flag:hover {
+  padding: .3em;
   color: goldenrod;
 }
 
 .fa-solid.fa-retweet {
+  padding: .3em;
   color: #4056A1;
 }
 .fa-solid.fa-retweet:hover {
+  padding: .3em;
   color: goldenrod;
 }
 .fa-solid.fa-heart {
+  padding: .3em;
   color: #4056A1;
 }
 .fa-solid.fa-heart:hover {
+  padding: .3em;
   color: goldenrod;
 }
