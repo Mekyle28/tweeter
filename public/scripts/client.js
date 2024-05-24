@@ -50,16 +50,18 @@ $(document).ready(function() {
 
   $("form").on("submit", function(event) {
     if (!$("textarea").val().trim()) {
-      alert("you can not submit an empty field. Please add some content and try again");
+      $('div.error-message').text("Error: Oops! Did you forget to type something? Add some content and try again :)");
+      $('div.error-message').slideDown();
       event.preventDefault();
       return;
     }
     if ($("textarea").val().length > 140) {
-      alert("whoa there, let cut that back a bit... remember 140 characters :)");
+      $('div.error-message').text('Error: Whoa there, let cut that back a bit... remember 140 characters');
+      $('div.error-message').slideDown();
       event.preventDefault();
       return;
     }
-
+    $('div.error-message').slideUp();
     event.preventDefault();
     const queryStr = $(this).serialize();
     $.ajax("/tweets", { method: 'POST', data: queryStr })

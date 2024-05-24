@@ -12,10 +12,34 @@ section div {
   padding-top: 5px;
 }
 
+.user-instructions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items:baseline;
+}
+
+div.error-message {
+  display: none;
+  padding: .3em .6em .1em .6em;
+  margin-left: 2em;
+  border: solid 2px red;
+  background-color: #f4f1ec;
+  color: #cc0000;
+  font-weight: 500;
+}
+/* div.error-message p {
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 0.1em;
+} */
+
 label {
   display: block;
-
+  
 }
+
+
 form {
   width: inherit;
   background-color: #f4f1ec;
