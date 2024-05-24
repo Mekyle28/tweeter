@@ -17,7 +17,15 @@ $(document).ready(function() {
     }
   };
 
+
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function(tweet) {
+  
     let $tweet = `<article>
       <header class="tweet">
         <img src=${tweet.user.avatars} >
@@ -26,7 +34,7 @@ $(document).ready(function() {
             <h4 class="handle">${tweet.user.handle}</h4>
           </div>
       </header>
-      <p>${tweet.content.text}</p>
+      <p>${escape(tweet.content.text)}</p>
       <footer>
         <p>${timeago.format(tweet["created_at"])}</p>
         <div>
@@ -55,7 +63,7 @@ $(document).ready(function() {
     event.preventDefault();
     const queryStr = $(this).serialize();
     $.ajax("/tweets", { method: 'POST', data: queryStr })
-      .then(function () {
+      .then(function() {
         loadTweets();
       });
   });
