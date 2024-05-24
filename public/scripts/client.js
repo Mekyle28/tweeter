@@ -19,13 +19,13 @@ $(document).ready(function () {
   const createTweetElement = function (tweet) {
     let $tweet = `<article>
       <header class="tweet">
-        <img src=${tweet["user"]["avatars"]} >
+        <img src=${tweet.user.avatars} >
           <div>
-            <h4 class="name">${tweet["user"]["name"]}</h4>
-            <h4 class="handle">${tweet["user"]["handle"]}</h4>
+            <h4 class="name">${tweet.user.name}</h4>
+            <h4 class="handle">${tweet.user.handle}</h4>
           </div>
       </header>
-      <p>${tweet["content"]["text"]}</p>
+      <p>${tweet.content.text}</p>
       <footer>
         <p>${timeago.format(tweet["created_at"])}</p>
         <div>
@@ -39,27 +39,23 @@ $(document).ready(function () {
   };
 
 
-  renderTweets(data);
-
-
   $("form").on("submit", function (event) {
     event.preventDefault();
     const queryStr = $(this).serialize();
-    console.log(queryStr);
-    $.ajax(queryStr, { method: 'POST' })
+    $.ajax("/tweets", { method: 'POST', data: queryStr })
       .then(function () {
-        console.log(this);
+        loadTweets();
       });
-    }
-  
-  const loadTweets = function() {
+  });
+
+  const loadTweets = function () {
     $.ajax("/tweets", {
       method: 'GET',
       dataType: 'json'
     })
-    .then(function(response) {
-      renderTweets(response);
-    });
-  });
+      .then(function (response) {
+        renderTweets(response);
+      });
+  };
 
 });
