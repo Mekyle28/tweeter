@@ -39,7 +39,14 @@ $(document).ready(function () {
   };
 
 
-  $("form").on("submit", function (event) {
+  $("form").on("submit", function(event) {
+    if (!$("textarea").val()) {
+      alert("you can not submit an empty field. Please add some content and try again");
+    }
+    if ($("textarea").val().length > 140) {
+      alert("whoa there, let cut that back a bit... remember 140 characters :)");
+    }
+
     event.preventDefault();
     const queryStr = $(this).serialize();
     $.ajax("/tweets", { method: 'POST', data: queryStr })
