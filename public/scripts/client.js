@@ -6,7 +6,7 @@
 
 
 $(document).ready(function () {
-  console.log("please work");
+
 
 
   const renderTweets = function (tweets) {
@@ -50,38 +50,16 @@ $(document).ready(function () {
       .then(function () {
         console.log(this);
       });
-
-    const loadTweets = function () {
-      $.ajax("/tweets", {
-        method: 'GET',
-        dataType: 'json'
-      })
-        .then(renderTweets(response));
-    };
-
-
-  });
-  const loadTweets = function () {
+    }
+  
+  const loadTweets = function() {
     $.ajax("/tweets", {
       method: 'GET',
       dataType: 'json'
     })
-      .then(renderTweets(response));
-  };
+    .then(function(response) {
+      renderTweets(response);
+    });
+  });
 
 });
-
-
-
-// $("form").on("submit", function(event) {
-//   alert("Handler for `submit` called.");
-//   event.preventDefault();
-//   const value = $(this).val();
-//   console.log(value);
-//   const queryStr = $(this).serialize();
-//   console.log(queryStr);
-//   $.ajax(queryStr, { method: 'POST' })
-//     .then(function() {
-//       console.log(this);
-//     });
-// });
