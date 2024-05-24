@@ -5,18 +5,19 @@
  */
 
 
-$(document).ready(function () {
+$(document).ready(function() {
 
 
 
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
+    $(".tweet-text").empty();
     for (const tweet of tweets) {
       const newTweet = createTweetElement(tweet);
       $('section.tweet-text').prepend(newTweet);
     }
   };
 
-  const createTweetElement = function (tweet) {
+  const createTweetElement = function(tweet) {
     let $tweet = `<article>
       <header class="tweet">
         <img src=${tweet.user.avatars} >
@@ -40,11 +41,15 @@ $(document).ready(function () {
 
 
   $("form").on("submit", function(event) {
-    if (!$("textarea").val()) {
+    if (!$("textarea").val().trim()) {
       alert("you can not submit an empty field. Please add some content and try again");
+      event.preventDefault();
+      return;
     }
     if ($("textarea").val().length > 140) {
       alert("whoa there, let cut that back a bit... remember 140 characters :)");
+      event.preventDefault();
+      return;
     }
 
     event.preventDefault();
@@ -55,12 +60,12 @@ $(document).ready(function () {
       });
   });
 
-  const loadTweets = function () {
+  const loadTweets = function() {
     $.ajax("/tweets", {
       method: 'GET',
       dataType: 'json'
     })
-      .then(function (response) {
+      .then(function(response) {
         renderTweets(response);
       });
   };
