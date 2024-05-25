@@ -26,14 +26,32 @@ body {
   font-weight: 600;
   
 }
-main {
+section.header-and-main {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
   background-color: #f4f1ec;
+  margin: 0;
 
 }
 
+main.container {
+  padding: 1em;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+@media only screen and (min-width: 1024px) {
+  section.header-and-main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    width: 100%;
+
+  }
+  
+    
+  
+}

@@ -1,10 +1,12 @@
 nav {
+  display: none;
   display: flex;
   justify-content: space-between;
   position: fixed;
   top: 0;
   color: #FFFFFF;
-  background-color: #4056A1;
+  background-color: rgb(162, 189, 238);
+  background-image: url(http://www.transparenttextures.com/patterns/az-subtle.png);
   height: 120px;
   width: 100%
 }
@@ -29,9 +31,25 @@ nav div {
 nav p {
   margin-bottom: 0px;
   padding-bottom: 0.2em;
+  padding-right: 1em;
+  font-weight: lighter;
 }
 
 nav i {
   align-self: center;
   color: crimson;
+}
+
+/* background-image: url(http://www.transparenttextures.com/patterns/az-subtle.png); */
+
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+    background-image: none;
+  }
+  nav p {
+    padding-right: 2em;
+  }
+
 }

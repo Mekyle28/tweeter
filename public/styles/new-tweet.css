@@ -4,6 +4,10 @@ section {
   margin: 1em;
 }
 
+section.new-tweet h2 {
+  display: none;
+}
+
 section div {
   display: flex;
   flex-direction: row;
@@ -27,6 +31,7 @@ div.error-message {
   background-color: #f4f1ec;
   color: #cc0000;
   font-weight: 500;
+  font-size: large;
 }
 /* div.error-message p {
   padding-right: 10px;
@@ -36,6 +41,7 @@ div.error-message {
 
 label {
   display: block;
+  padding-bottom: .4em;
   
 }
 
@@ -68,3 +74,22 @@ form textarea {
 .out-of-characters {
   color: red;
 }
+
+@media only screen and (min-width: 1024px) {
+
+  main.container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2.5em;
+    /* padding-left: 3em; */
+    width:60%;
+    margin-top: 118px; 
+  }
+  section.new-tweet {
+    display: flex;
+    width:97%;
+    justify-content: center;
+    /* padding-left: 2em */
+  }
+
+};
