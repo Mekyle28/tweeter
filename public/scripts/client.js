@@ -8,9 +8,10 @@ $(document).ready(function() {
       $('section.tweet-text').prepend(newTweet);
     }
     $("textarea").val('');
+    $(".counter").val('140');
   };
 
-  
+
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
