@@ -36,35 +36,39 @@
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
-    <header class="top">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2>Your Name</h2>
-      </div>
-  </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form action="/tweets/" method="POST">
-          <div class="user-instructions">
-            <label for="tweet-text">What are you humming about?</label>
-            <div class="error-message"> error: message </div>
-          </div>
-          <textarea name="text" id="tweet-text"></textarea>
+    <section class="header-and-main">
+      <span class="header">
+        <header class="top">
           <div>
-            <button class="tweet-button" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+              <img src="/images/profile-hex.png"> 
           </div>
-        </form>
-      </section>
-      <section class="tweet-text">
+          <br>
+          <div>
+              <h2><strong>Jane</strong> Doe</h2>
+          </div>
+        </header>
+      </span>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form action="/tweets/" method="POST">
+            <div class="user-instructions">
+              <label for="tweet-text">What are you humming about?</label>
+              <div class="error-message"> error: message </div>
+            </div>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div>
+              <button class="tweet-button" type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <section class="tweet-text">
 
+        </section>
+
+      </main>
     </section>
-
-    </main>
   </body>
 </html>
