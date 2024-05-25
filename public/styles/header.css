@@ -21,7 +21,6 @@ header.top {
 header.top div img {
   display:flex;
   size: 80%;
-  /* max-height: 95%; */
   justify-content: center;
 }
 
@@ -46,16 +45,9 @@ header.top h2 strong{
     width:48%;
     padding: 4em 0 4em 3em;
    }
-
+   
    header.top {
-    width: 70%
+    width: 75%
    }
-
-   /* header.top {
-    position: fixed;
-    top: 250px
-   } */
 }
 
-/* position: fixed;
-  top: 0; */

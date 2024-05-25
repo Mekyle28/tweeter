@@ -69,27 +69,27 @@ footer p {
 
 
 .fa-solid.fa-flag {
-  padding: .3em;
+  padding: 0 .3em .3em .3em ;
   color: #4056A1;
 }
 .fa-solid.fa-flag:hover {
-  padding: .3em;
+  padding: 0 .3em .3em .3em ;
   color: goldenrod;
 }
 
 .fa-solid.fa-retweet {
-  padding: .3em;
+  padding: 0 .3em .3em .3em ;
   color: #4056A1;
 }
 .fa-solid.fa-retweet:hover {
-  padding: .3em;
+  padding: 0 .3em .3em .3em ;
   color: goldenrod;
 }
 .fa-solid.fa-heart {
-  padding: .3em;
+  padding: 0 .3em .3em .3em ;
   color: #4056A1;
 }
 .fa-solid.fa-heart:hover {
-  padding: .3em;
+  padding: 0 .3em .3em .3em ;
   color: goldenrod;
 }
