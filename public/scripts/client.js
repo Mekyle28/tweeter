@@ -15,6 +15,7 @@ $(document).ready(function() {
       const newTweet = createTweetElement(tweet);
       $('section.tweet-text').prepend(newTweet);
     }
+    $("textarea").val('');
   };
 
 
