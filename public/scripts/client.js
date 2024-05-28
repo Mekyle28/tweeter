@@ -1,26 +1,21 @@
 
-$(document).ready(function() {
+const renderTweets = function(tweets) {
+  for (const tweet of tweets) {
+    const newTweet = createTweetElement(tweet);
+    $('section.tweet-text').prepend(newTweet);
+  }
+};
 
-  const renderTweets = function(tweets) {
-    $(".tweet-text").empty();
-    for (const tweet of tweets) {
-      const newTweet = createTweetElement(tweet);
-      $('section.tweet-text').prepend(newTweet);
-    }
-    $("textarea").val('');
-    $(".counter").val('140');
-  };
+// prevents cross-site scripting by re-encoding text into safe form
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
-
-  const escape = function(str) {
-    let div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  };
-
-  const createTweetElement = function(tweet) {
-  
-    let $tweet = `<article>
+// timeago api automatically updates timestamp to show how long ago tweet was created
+const createTweetElement = function(tweet) {
+  let $tweet = `<article>
       <header class="tweet">
         <img src=${tweet.user.avatars} >
           <div>
@@ -38,9 +33,25 @@ $(document).ready(function() {
         </div>
       </footer>
     </article>`;
-    return $tweet;
-  };
+  return $tweet;
+};
 
+
+const loadTweets = function() {
+  $.ajax("/tweets", {
+    method: 'GET',
+    dataType: 'json'
+  })
+    .then(function (response) {
+      renderTweets(response);
+    })
+    .catch(function (error) {
+      console.log("error loading tweets:", error);
+    });
+
+};
+
+$(document).ready(function() {
 
   $("form").on("submit", function(event) {
     if (!$("textarea").val().trim()) {
@@ -57,21 +68,24 @@ $(document).ready(function() {
     }
     $('div.error-message').slideUp();
     event.preventDefault();
+    // converts tweet to a URL encoded text string to be used when making an AJAX request.
     const queryStr = $(this).serialize();
     $.ajax("/tweets", { method: 'POST', data: queryStr })
       .then(function() {
-        loadTweets();
+        $("textarea").val('');
+        $(".counter").val('140');
+        $.get("/tweets", (res) => {
+          // slice to take only the last/most recent tweet in the array
+          const newTweet = res.slice(-1);
+          renderTweets(newTweet);
+        }).catch(function(error) {
+          console.log("error fetching tweets after submission:", error);
+        });
+      })
+      .catch(function(error) {
+        console.log("error loading tweets:", error);
       });
   });
 
-  const loadTweets = function() {
-    $.ajax("/tweets", {
-      method: 'GET',
-      dataType: 'json'
-    })
-      .then(function(response) {
-        renderTweets(response);
-      });
-  };
-
+  loadTweets();
 });
