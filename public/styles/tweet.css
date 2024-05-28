@@ -67,29 +67,16 @@ footer p {
   font-size:large;
 }
 
-
-.fa-solid.fa-flag {
-  padding: 0 .3em .3em .3em ;
-  color: #4056A1;
-}
-.fa-solid.fa-flag:hover {
-  padding: 0 .3em .3em .3em ;
-  color: goldenrod;
-}
-
-.fa-solid.fa-retweet {
-  padding: 0 .3em .3em .3em ;
-  color: #4056A1;
-}
-.fa-solid.fa-retweet:hover {
-  padding: 0 .3em .3em .3em ;
-  color: goldenrod;
-}
+.fa-solid.fa-flag,
+.fa-solid.fa-retweet,
 .fa-solid.fa-heart {
-  padding: 0 .3em .3em .3em ;
-  color: #4056A1;
+    padding: 0 0.3em 0.3em 0.3em;
+    color: #4056a1;
 }
+
+.fa-solid.fa-flag:hover,
+.fa-solid.fa-retweet:hover,
 .fa-solid.fa-heart:hover {
-  padding: 0 .3em .3em .3em ;
-  color: goldenrod;
+    padding: 0 0.3em 0.3em 0.3em;
+    color: goldenrod;
 }
