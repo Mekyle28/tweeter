@@ -58,7 +58,7 @@ Tweeter is a simplified single-page application Twitter clone built using HTML, 
 
 ## Acknowledgments
 
-This project was created as part of my learning at Lighthouse Labs. The repository that was the starting off point of this project was created by []([lighthouse-labs](https://github.com/lighthouse-labs/tweeter)). I thank them for providing the foundation for this project.
+This project was created as part of my learning at Lighthouse Labs. The repository that was the starting off point of this project was created by [lighthouse-labs](https://github.com/lighthouse-labs/tweeter). I thank them for providing the foundation for this project.
 
 
 
